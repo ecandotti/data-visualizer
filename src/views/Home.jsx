@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
-import data from '../data/people.json'
+import { useData } from '../context/data'
 
 import Pagination from '../components/Pagination'
 import Table from '../components/Table'
 
 const Home = () => {
-    const people = data.people
+    const { people } = useData()
 
     const [peoplePerPage] = useState(10)
     const [currentPage, setCurrentPage] = useState(1)

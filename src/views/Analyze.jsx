@@ -1,12 +1,12 @@
 import React from 'react'
 
-import data from '../data/people.json'
+import { useData } from '../context/data'
 
 import MenWomen from '../components/Analyzes/MenWomen'
 import AnimalLovers from '../components/Analyzes/AnimalLovers'
 
 const Analyze = () => {
-    const people = data.people
+    const { people } = useData()
 
     return (
         <>
