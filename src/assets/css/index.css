@@ -1,1 +1,6 @@
 @import "./_styles.css";
+@import "./_pagination.css";
+@import "./_table.css";
+@import "./_navigation.css";
+@import "./_analyze.css";
+@import "./_people-card.css";
