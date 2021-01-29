@@ -6,10 +6,21 @@ nav {
 nav > a {
     border-radius: 10px;
     border: none;
-    background-color: teal;
+    background-color: #27ae60;
     color: whitesmoke;
     font-size: 20px;
     user-select: none;
     margin: 10px;
     padding: 10px;
+    box-shadow: 2px 2px 10px rgba(39, 39, 39, 0.527);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+nav > a:hover {
+    background-color: #2ecc71;
+}
+
+nav > a:focus {
+    outline-style: none;
 }
