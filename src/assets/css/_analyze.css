@@ -1,0 +1,10 @@
+.chart {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.chart-item {
+    width: 400px;
+    height: auto;
+    text-align: center;
+}
