@@ -6,12 +6,13 @@ import { DataContext } from './context/dataContext'
 import Navigation from './components/Navigation'
 
 import Home from './views/Home'
-// import Analyze from './views/Analyze'
+import Filter from './views/Filter'
 import PeopleCard from './views/PeopleCard'
 
 const App = () => {
     const [people, setPeople] = useState([])
 
+    // Async function that get all people
     const getContact = async (isReset = false) => {
         // eslint-disable-next-line prettier/prettier
         await fetch('https://run.mocky.io/v3/70e5b0ad-7112-41c5-853e-b382a39e65b7')
@@ -20,6 +21,7 @@ const App = () => {
             .then(isReset && console.log('Data reset'))
     }
 
+    // Before the component is mounted
     useEffect(() => {
         console.log('Updating data...')
         getContact().then(console.log('Data updated'))
@@ -33,7 +35,7 @@ const App = () => {
                     <Navigation getContact={getContact} />
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        {/* <Route path="/analyze" component={Analyze} /> */}
+                        <Route path="/filter" component={Filter} />
                         <Route path="/people/:id" component={PeopleCard} />
                         <Route path="*" component={() => '404'} />
                     </Switch>
