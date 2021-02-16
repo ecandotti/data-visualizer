@@ -15,12 +15,15 @@ const Home = () => {
     const indexOfFirstPeople = indexOfLastPeople - peoplePerPage
     const peopleSelected = people.slice(indexOfFirstPeople, indexOfLastPeople)
     return (
-        <div>
+        <div className="home">
             <Table data={peopleSelected} />
-            <Pagination
-                totalPage={people.length / peoplePerPage}
-                setCurrentPage={setCurrentPage}
-            />
+            <div className="home-pagination">
+                <Pagination
+                    totalPage={people.length / peoplePerPage}
+                    setCurrentPage={setCurrentPage}
+                    currentPage={currentPage}
+                />
+            </div>
         </div>
     )
 }
