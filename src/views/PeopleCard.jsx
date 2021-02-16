@@ -21,7 +21,7 @@ const PeopleCard = ({ match }) => {
 
     let currentPeople = people[id - 1]
 
-    // Contact
+    // >>> Contact
     const [firstName, setFirstName] = useState(currentPeople.firstname)
     const [lastName, setLastName] = useState(currentPeople.lastname)
     const [gender, setGender] = useState(currentPeople.gender)
@@ -30,8 +30,9 @@ const PeopleCard = ({ match }) => {
     const [city, setCity] = useState(currentPeople.contact.city)
     const [phone, setPhone] = useState(currentPeople.contact.phone)
     const [email, setEmail] = useState(currentPeople.contact.email)
+    // <<< Contact
 
-    // Preferences
+    // >>> Preferences
     const [favColor, setFavColor] = useState(
         currentPeople.preferences.favorite_color
     )
@@ -42,12 +43,18 @@ const PeopleCard = ({ match }) => {
         currentPeople.preferences.favorite_movie
     )
     const [favPet, setFavPet] = useState(currentPeople.preferences.favorite_pet)
+    // <<< Preferences
 
+    // For editMode I just add the disabled property in input tag
+    // which depends on the editMode variable (true or false)
     const [editMode, setEditMode] = useState(false)
+
+    // Function that edit information
     const save = () => {
         if (!editMode) {
             setEditMode(!editMode)
         } else {
+            // Overwrite data
             currentPeople = {
                 id: id,
                 firstname: firstName,
@@ -218,6 +225,7 @@ const PeopleCard = ({ match }) => {
                     editMode {editMode ? 'enable' : 'desable'}
                 </div>
             </div>
+            {/* Leaflet component that shows the position of the person  */}
             <MapPeople
                 lon={currentPeople.contact.location.lon}
                 lat={currentPeople.contact.location.lat}
