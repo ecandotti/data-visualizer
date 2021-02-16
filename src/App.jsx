@@ -8,11 +8,12 @@ import data from './data/people.json'
 import Navigation from './components/Navigation'
 
 import Home from './views/Home'
-import Analyze from './views/Analyze'
+// import Analyze from './views/Analyze'
 import PeopleCard from './views/PeopleCard'
 
 const App = () => {
     const [people, setPeople] = useState(data.people)
+
     return (
         <div className="container">
             <h1 id="main-title">Data Visualizer 🔬</h1>
@@ -21,7 +22,7 @@ const App = () => {
                     <Navigation />
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/analyze" component={Analyze} />
+                        {/* <Route path="/analyze" component={Analyze} /> */}
                         <Route path="/people/:id" component={PeopleCard} />
                         <Route path="*" component={() => '404'} />
                     </Switch>
