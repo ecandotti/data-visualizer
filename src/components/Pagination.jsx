@@ -1,11 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Pagination = ({ totalPage, setCurrentPage }) => {
+const Pagination = ({ totalPage, setCurrentPage, currentPage }) => {
     let PaginationRow = []
     for (let i = 1; i <= totalPage; i++) {
         PaginationRow.push(
-            <li key={i} onClick={() => setCurrentPage(i)}>
+            <li
+                className={`${currentPage === i && 'pagination-active'}`}
+                key={i}
+                onClick={() => {
+                    setCurrentPage(i)
+                }}
+            >
                 {i}
             </li>
         )
@@ -16,6 +22,7 @@ const Pagination = ({ totalPage, setCurrentPage }) => {
 Pagination.propTypes = {
     totalPage: PropTypes.number.isRequired,
     setCurrentPage: PropTypes.func.isRequired,
+    currentPage: PropTypes.number.isRequired,
 }
 
 export default Pagination
