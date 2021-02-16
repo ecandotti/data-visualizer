@@ -4,15 +4,20 @@ import { AiFillHome, AiFillPieChart } from 'react-icons/ai'
 import { FaFileExport } from 'react-icons/fa'
 import { TiArrowBack } from 'react-icons/ti'
 import { NavLink, useHistory } from 'react-router-dom'
+
 import { useData } from '../context/dataContext'
 
 const Navigation = ({ getContact }) => {
     const { people } = useData()
+
     const history = useHistory()
+
+    // Thanks to History Hook, is a function that go back to previously route used
     const throwBack = () => {
         history.goBack()
     }
 
+    // Function that download data.json edited
     const exportFiles = () => {
         const filename = 'data.json'
         const jsonStr = JSON.stringify(people)
@@ -26,19 +31,24 @@ const Navigation = ({ getContact }) => {
 
     return (
         <nav>
-            <NavLink exact to="/">
+            <NavLink exact to="/" className="nav-item">
                 <AiFillHome />
             </NavLink>
-            <NavLink to="/analyze">
+            <NavLink to="/filter" className="nav-item">
                 <AiFillPieChart />
             </NavLink>
-            <a id="download" onClick={() => exportFiles()}>
+            <a className="nav-item" id="download" onClick={() => exportFiles()}>
                 <FaFileExport />
             </a>
-            <a onClick={() => throwBack()} style={{ backgroundColor: 'red' }}>
+            <a
+                className="nav-item"
+                onClick={() => throwBack()}
+                style={{ backgroundColor: 'red' }}
+            >
                 <TiArrowBack />
             </a>
             <a
+                className="nav-item"
                 onClick={() => getContact(true)}
                 style={{ backgroundColor: '#3498db' }}
             >
