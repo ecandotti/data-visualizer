@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { AiFillHome, AiFillPieChart } from 'react-icons/ai'
 import { FaFileExport } from 'react-icons/fa'
 import { TiArrowBack } from 'react-icons/ti'
 import { NavLink, useHistory } from 'react-router-dom'
 import { useData } from '../context/dataContext'
 
-const Navigation = () => {
+const Navigation = ({ getContact }) => {
     const { people } = useData()
     const history = useHistory()
     const throwBack = () => {
@@ -34,14 +35,21 @@ const Navigation = () => {
             <a id="download" onClick={() => exportFiles()}>
                 <FaFileExport />
             </a>
+            <a onClick={() => throwBack()} style={{ backgroundColor: 'red' }}>
+                <TiArrowBack />
+            </a>
             <a
-                onClick={() => throwBack()}
+                onClick={() => getContact(true)}
                 style={{ backgroundColor: '#3498db' }}
             >
-                <TiArrowBack />
+                Reset
             </a>
         </nav>
     )
+}
+
+Navigation.propTypes = {
+    getContact: PropTypes.func.isRequired,
 }
 
 export default Navigation
