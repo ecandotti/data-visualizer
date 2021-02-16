@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 
 import Item from './Item'
 
-const Table = ({ data }) => {
+const Table = ({ data, search }) => {
+    // search props to know if data props is from result of search or not
     return (
         <div className="table-people">
             <table>
@@ -17,9 +18,13 @@ const Table = ({ data }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((people) => (
-                        <Item key={people.id} people={people} />
-                    ))}
+                    {search
+                        ? data.map((people) => (
+                              <Item key={people.item.id} people={people.item} />
+                          ))
+                        : data.map((people) => (
+                              <Item key={people.id} people={people} />
+                          ))}
                 </tbody>
             </table>
         </div>
@@ -28,6 +33,7 @@ const Table = ({ data }) => {
 
 Table.propTypes = {
     data: PropTypes.any,
+    search: PropTypes.bool,
 }
 
 export default Table
