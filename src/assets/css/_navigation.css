@@ -1,9 +1,12 @@
 nav {
+    display: flex;
+    flex-flow: row nowrap;
     padding: 10px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
-nav > a {
+.nav-item {
     border-radius: 10px;
     border: none;
     background-color: #27ae60;
@@ -17,10 +20,10 @@ nav > a {
     cursor: pointer;
 }
 
-nav > a:hover {
+.nav-item:hover {
     background-color: #2ecc71;
 }
 
-nav > a:focus {
+.nav-item:focus {
     outline-style: none;
 }
