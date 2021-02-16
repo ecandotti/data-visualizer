@@ -5,11 +5,18 @@
     padding: 0px;
     list-style: none;
     text-align: center;
+    justify-content: center;
 }
 
 .pagination > li {
-    border: solid 1px rgb(0, 114, 180);
+    color: #111;
     padding: 0px 10px 0px 10px;
+    margin: 0px 5px;
     cursor: pointer;
     user-select: none;
+}
+
+.pagination-active {
+    color: white !important;
+    background-color: #2980b9;
 }
