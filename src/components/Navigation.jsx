@@ -43,14 +43,14 @@ const Navigation = ({ getContact }) => {
             <a
                 className="nav-item"
                 onClick={() => throwBack()}
-                style={{ backgroundColor: 'red' }}
+                style={{ backgroundColor: '#3498db' }}
             >
                 <TiArrowBack />
             </a>
             <a
                 className="nav-item"
                 onClick={() => getContact(true)}
-                style={{ backgroundColor: '#3498db' }}
+                style={{ backgroundColor: 'red' }}
             >
                 Reset
             </a>
