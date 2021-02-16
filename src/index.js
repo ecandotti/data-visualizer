@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom'
 
 import App from './App'
 
+// React mount in root id element
 ReactDOM.render(<App />, document.getElementById('root'))
 
-// HMR
+// Hot Module Reload
 if (import.meta.hot) {
     import.meta.hot.accept()
 }
