@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useData } from '../context/data'
+import { useData } from '../context/dataContext'
 
 import MenWomen from '../components/Analyzes/MenWomen'
 import AnimalLovers from '../components/Analyzes/AnimalLovers'

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { DataContext } from './context/data'
+import { DataContext } from './context/dataContext'
 
 import data from './data/people.json'
 

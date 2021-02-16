@@ -13,7 +13,7 @@ import { GiFruitBowl } from 'react-icons/gi'
 import { HiMail } from 'react-icons/hi'
 
 import MapPeople from '../components/MapPeople'
-import { useData } from '../context/data'
+import { useData } from '../context/dataContext'
 
 const PeopleCard = ({ match }) => {
     const { id } = match.params

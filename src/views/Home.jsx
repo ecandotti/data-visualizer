@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { useData } from '../context/data'
+import { useData } from '../context/dataContext'
 
 import Pagination from '../components/Pagination'
 import Table from '../components/Table'

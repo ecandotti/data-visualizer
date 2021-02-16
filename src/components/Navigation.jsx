@@ -3,7 +3,7 @@ import { AiFillHome, AiFillPieChart } from 'react-icons/ai'
 import { FaFileExport } from 'react-icons/fa'
 import { TiArrowBack } from 'react-icons/ti'
 import { NavLink, useHistory } from 'react-router-dom'
-import { useData } from '../context/data'
+import { useData } from '../context/dataContext'
 
 const Navigation = () => {
     const { people } = useData()
