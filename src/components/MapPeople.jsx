@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 const MapPeople = ({ lat, lon, fullname }) => {
+    // Leaflet component that shows the position of the person received by PeopleCard component
     return (
         <div>
             <MapContainer center={[lat, lon]} zoom={13} scrollWheelZoom={false}>
