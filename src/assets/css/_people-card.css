@@ -59,6 +59,18 @@
     /* max-width: 970px; */
 }
 
+.location-people-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.google-map-iframe {
+    border: 1px solid #111;
+    border-radius: 5px;
+    width: 100%;
+    height: 300px;
+}
+
 #edit {
     font-size: 22px;
     width: 50px;

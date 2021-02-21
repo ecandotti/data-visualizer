@@ -18,7 +18,6 @@ const Home = () => {
     })
 
     const results = fuse.search(name)
-    console.log(results)
     // <<< Search function using FuseJS
 
     // >>> Pagination system

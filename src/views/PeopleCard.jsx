@@ -225,11 +225,11 @@ const PeopleCard = ({ match }) => {
                     editMode {editMode ? 'enable' : 'desable'}
                 </div>
             </div>
-            {/* Leaflet component that shows the position of the person  */}
+            {/* GoogleMap component that shows the position of the person  */}
+            <h2 className="location-people-title">📍 Location :</h2>
             <MapPeople
                 lon={currentPeople.contact.location.lon}
                 lat={currentPeople.contact.location.lat}
-                fullname={`${firstName} ${lastName}`}
             />
         </div>
     )
