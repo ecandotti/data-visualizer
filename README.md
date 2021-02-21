@@ -11,7 +11,7 @@ Library used :
 - Snowpack  
 - Babel / ESLint / Prettier
   
-To Do :
+To Do :  
 [X] Creating project  
 [X] getData from URL  
 [X] Display data in array  
