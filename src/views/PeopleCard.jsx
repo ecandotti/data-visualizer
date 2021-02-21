@@ -56,7 +56,7 @@ const PeopleCard = ({ match }) => {
         } else {
             // Overwrite data
             currentPeople = {
-                id: id,
+                id: parseInt(id),
                 firstname: firstName,
                 lastname: lastName,
                 gender: gender,
