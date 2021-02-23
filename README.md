@@ -15,9 +15,9 @@ To Do :
 [X] Creating project  
 [X] getData from URL  
 [X] Display data in array  
-[X] Search function
-[_] Chart JS
-[X] Edit data
-[X] Download data edited
-[X] Comment all project
-[_] Custom filter
+[X] Search function  
+[_] Chart JS  
+[X] Edit data  
+[X] Download data edited  
+[X] Comment all project  
+[Ò_] Custom filter  
