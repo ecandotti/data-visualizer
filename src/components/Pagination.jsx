@@ -16,7 +16,7 @@ const Pagination = ({ totalPage, setCurrentPage, currentPage }) => {
             </li>
         )
     }
-    return <ul className="pagination">{PaginationRow}</ul>
+    return <ul className="home-pagination pagination">{PaginationRow}</ul>
 }
 
 Pagination.propTypes = {

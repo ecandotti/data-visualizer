@@ -4,7 +4,7 @@ import { GiFemale, GiMale } from 'react-icons/gi'
 import { FaAddressCard } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 
-const Item = ({ people }) => {
+const Card = ({ people }) => {
     return (
         <tr>
             <td>{people.id}</td>
@@ -24,8 +24,8 @@ const Item = ({ people }) => {
     )
 }
 
-Item.propTypes = {
+Card.propTypes = {
     people: PropTypes.object.isRequired,
 }
 
-export default Item
+export default Card

@@ -34,7 +34,7 @@ const Navigation = ({ getContact }) => {
             <NavLink exact to="/" className="nav-item">
                 <AiFillHome />
             </NavLink>
-            <NavLink to="/filter" className="nav-item">
+            <NavLink to="/graphic" className="nav-item">
                 <AiFillPieChart />
             </NavLink>
             <a className="nav-item" id="download" onClick={() => exportFiles()}>

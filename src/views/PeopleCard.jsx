@@ -12,7 +12,7 @@ import { MdPets, MdMovie, MdColorLens } from 'react-icons/md'
 import { GiFruitBowl } from 'react-icons/gi'
 import { HiMail } from 'react-icons/hi'
 
-import MapPeople from '../components/MapPeople'
+import Map from '../components/Map'
 import { useData } from '../context/dataContext'
 
 const PeopleCard = ({ match }) => {
@@ -87,12 +87,18 @@ const PeopleCard = ({ match }) => {
 
     return (
         <div className="container">
+            <div style={{ textAlign: 'center' }}>
+                <button onClick={() => save()} id="edit">
+                    {editMode ? <FaSave /> : <FaUserEdit />}
+                </button>
+                <br />
+                editMode {editMode ? 'enable' : 'desable'}
+            </div>
             <div className="card">
-                <div className="card-image"></div>
                 <div className="card-content">
                     <div className="card-id">ID : {currentPeople.id}</div>
                     <div>
-                        <h4>Contact</h4>
+                        <h4 className="card-title">Contact</h4>
                         <ul className="card-contact">
                             <li className="card-item">
                                 <FaAddressCard className="card-icon-content" />
@@ -170,7 +176,7 @@ const PeopleCard = ({ match }) => {
                         </ul>
                     </div>
                     <div>
-                        <h4>Preferences</h4>
+                        <h4 className="card-title">Preferences</h4>
                         <ul className="card-preferences">
                             <li className="card-item">
                                 <MdColorLens className="card-icon-content" />
@@ -217,17 +223,10 @@ const PeopleCard = ({ match }) => {
                         </ul>
                     </div>
                 </div>
-                <div style={{ textAlign: 'center' }}>
-                    <button onClick={() => save()} id="edit">
-                        {editMode ? <FaSave /> : <FaUserEdit />}
-                    </button>
-                    <br />
-                    editMode {editMode ? 'enable' : 'desable'}
-                </div>
             </div>
             {/* GoogleMap component that shows the position of the person  */}
             <h2 className="location-people-title">📍 Location :</h2>
-            <MapPeople
+            <Map
                 lon={currentPeople.contact.location.lon}
                 lat={currentPeople.contact.location.lat}
             />

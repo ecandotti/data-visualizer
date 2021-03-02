@@ -2,8 +2,8 @@ import React from 'react'
 
 import { useData } from '../context/dataContext'
 
-import MenWomen from '../components/Filters/MenWomen'
-import AnimalLovers from '../components/Filters/AnimalLovers'
+import MenWomen from '../components/Graphics/MenWomen'
+import AnimalLovers from '../components/Graphics/AnimalLovers'
 
 const Analyze = () => {
     const { people } = useData()

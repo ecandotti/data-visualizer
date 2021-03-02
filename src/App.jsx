@@ -6,7 +6,7 @@ import { DataContext } from './context/dataContext'
 import Navigation from './components/Navigation'
 
 import Home from './views/Home'
-import Filter from './views/Filter'
+import Graphics from './views/Graphics'
 import PeopleCard from './views/PeopleCard'
 
 const App = () => {
@@ -35,7 +35,7 @@ const App = () => {
                     <Navigation getContact={getContact} />
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/filter" component={Filter} />
+                        <Route path="/graphic" component={Graphics} />
                         <Route path="/people/:id" component={PeopleCard} />
                         <Route path="*" component={() => '404'} />
                     </Switch>

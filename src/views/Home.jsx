@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { BiSearch } from 'react-icons/bi'
 import Fuse from 'fuse.js'
 
 import { useData } from '../context/dataContext'
 
-import Pagination from '../components/Pagination'
 import Table from '../components/Table'
+import Search from '../components/Search'
+import Filter from '../components/Filter'
 
 const Home = () => {
     const { people } = useData()
@@ -13,11 +13,10 @@ const Home = () => {
     // >>> Search function using FuseJS
     const [name, setName] = useState('')
     const fuse = new Fuse(people, {
-        keys: ['firstname', 'lastname'],
-        includeScore: true,
+        keys: ['firstname', 'lastname', 'contact.city', 'contact.country'],
     })
 
-    const results = fuse.search(name)
+    const fuseSearch = fuse.search(name)
     // <<< Search function using FuseJS
 
     // >>> Pagination system
@@ -26,40 +25,43 @@ const Home = () => {
 
     const indexOfLastPeople = currentPage * peoplePerPage
     const indexOfFirstPeople = indexOfLastPeople - peoplePerPage
-    const peopleSelected = people.slice(indexOfFirstPeople, indexOfLastPeople)
+    // <<< Pagination system
+
+    let peopleSelected = []
+    let result
+
+    if (name.length > 2) {
+        // If search exist (with 3 letters minimum)
+        peopleSelected = fuseSearch.slice(indexOfFirstPeople, indexOfLastPeople)
+        result = (
+            <Table
+                data={peopleSelected}
+                totalPage={fuseSearch.length / peoplePerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+                search={true}
+            />
+        )
+    } else {
+        // Else, show all people
+        peopleSelected = people.slice(indexOfFirstPeople, indexOfLastPeople)
+        result = (
+            <Table
+                data={peopleSelected}
+                totalPage={people.length / peoplePerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+                search={false}
+            />
+        )
+    }
     // >>> Pagination system
 
     return (
         <div className="home">
-            <div className="search-bar">
-                <BiSearch />
-                <input
-                    type="text"
-                    value={name}
-                    placeholder="Search people"
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </div>
-
-            {
-                // If search exist (with 2 letters minimum)
-                name.length > 2 ? (
-                    <Table data={results} search={true} />
-                ) : (
-                    // Else, show all people
-                    <>
-                        <Table data={peopleSelected} />
-                        <div className="home-pagination">
-                            <Pagination
-                                totalPage={people.length / peoplePerPage}
-                                setCurrentPage={setCurrentPage}
-                                currentPage={currentPage}
-                                search={false}
-                            />
-                        </div>
-                    </>
-                )
-            }
+            <Search setName={setName} name={name} />
+            <Filter />
+            {result}
         </div>
     )
 }
