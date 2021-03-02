@@ -20,4 +20,4 @@ To Do :
 [X] Edit data  
 [X] Download data edited  
 [X] Comment all project  
-[Ò_] Custom filter  
+[_] Custom filter  
