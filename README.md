@@ -16,8 +16,9 @@ To Do :
 [X] getData from URL  
 [X] Display data in array  
 [X] Search function  
-[_] Chart JS  
+[X] Chart JS  
 [X] Edit data  
 [X] Download data edited  
 [X] Comment all project  
-[_] Custom filter  
+[X] Custom filter  
+[_] Test unitaire  
