@@ -10,7 +10,9 @@ const Analyze = () => {
 
     return (
         <>
-            <h2>Analyze</h2>
+            <h2 className="filter-title" style={{ marginBottom: '20px' }}>
+                Analyze
+            </h2>
             <div className="chart">
                 <div className="chart-item">
                     <h3>Men / Women</h3>
