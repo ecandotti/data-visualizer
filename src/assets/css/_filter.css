@@ -1,0 +1,29 @@
+.filter-container {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px rgb(83, 83, 83) solid;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.filter-title {
+    text-align: center;
+}
+
+.filter-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 700px) {
+    .filter-menu {
+        flex-flow: column nowrap;
+    }
+
+    .filter-item {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
