@@ -10,6 +10,7 @@ import Graphics from './views/Graphics'
 import PeopleCard from './views/PeopleCard'
 
 const App = () => {
+    const [initialData, setInitialData] = useState([])
     const [people, setPeople] = useState([])
 
     // Async function that get all people
@@ -17,7 +18,10 @@ const App = () => {
         // eslint-disable-next-line prettier/prettier
         await fetch('https://run.mocky.io/v3/70e5b0ad-7112-41c5-853e-b382a39e65b7')
             .then((res) => res.json())
-            .then((data) => setPeople(data.people))
+            .then((data) => {
+                setInitialData(data.people)
+                setPeople(data.people)
+            })
             .then(isReset && console.log('Data reset'))
     }
 
@@ -30,7 +34,9 @@ const App = () => {
     return (
         <div className="container">
             <h1 id="main-title">Data Visualizer 🔬</h1>
-            <DataContext.Provider value={{ people, setPeople }}>
+            <DataContext.Provider
+                value={{ people, setPeople, initialData, setInitialData }}
+            >
                 <Router>
                     <Navigation getContact={getContact} />
                     <Switch>
