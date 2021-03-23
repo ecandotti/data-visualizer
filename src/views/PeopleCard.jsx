@@ -17,9 +17,9 @@ import { useData } from '../context/dataContext'
 
 const PeopleCard = ({ match }) => {
     const { id } = match.params
-    const { people } = useData()
+    const { initialData } = useData()
 
-    let currentPeople = people[id - 1]
+    let currentPeople = initialData[id - 1]
 
     // >>> Contact
     const [firstName, setFirstName] = useState(currentPeople.firstname)
@@ -78,9 +78,9 @@ const PeopleCard = ({ match }) => {
                     favorite_pet: favPet,
                 },
             }
-            console.log(people[id - 1])
-            people[id - 1] = currentPeople
-            console.log(people[id - 1])
+            console.log(initialData[id - 1])
+            initialData[id - 1] = currentPeople
+            console.log(initialData[id - 1])
             setEditMode(!editMode)
         }
     }
