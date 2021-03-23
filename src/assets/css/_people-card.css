@@ -101,7 +101,7 @@
     color: black;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
     .card {
         flex-flow: column nowrap;
         border: none;
