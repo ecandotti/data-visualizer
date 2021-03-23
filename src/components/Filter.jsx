@@ -23,11 +23,14 @@ const Filter = () => {
         }
     }
 
+    // When fruitValue's value change, useEffect react
     useEffect(() => {
         if (fruitValue === '') {
             setPeople(initialData)
         } else {
+            // If genderValue exist, we add gender condition else not
             if (people && genderValue) {
+                // Store filter result in people variable
                 setPeople(
                     initialData.filter(
                         (word) =>
@@ -45,11 +48,14 @@ const Filter = () => {
         }
     }, [fruitValue])
 
+    // When genderValue's value change, useEffect react
     useEffect(() => {
         if (genderValue === '') {
             setPeople(initialData)
         } else {
+            // If fruitValue exist, we add fruit condition else not
             if (people && fruitValue) {
+                // Store filter result in people variable
                 setPeople(
                     initialData.filter(
                         (word) =>
@@ -71,6 +77,7 @@ const Filter = () => {
             <div className="filter-menu">
                 <div className="filter-item">
                     <span>Choose gender : </span>
+                    {/* Map all type of gender [array] and display in option tag */}
                     <select
                         value={genderValue}
                         onChange={(e) => setGenderValue(e.target.value)}
@@ -85,6 +92,7 @@ const Filter = () => {
                 </div>
                 <div className="filter-item">
                     <span>Choose fruit : </span>
+                    {/* Map all type of fruit [array] and display in option tag */}
                     <select
                         value={fruitValue}
                         onChange={(e) => setFruitValue(e.target.value)}

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 const Pagination = ({ totalPage, setCurrentPage, currentPage }) => {
     let PaginationRow = []
+
+    // Create li tag for each page exist
     for (let i = 1; i <= totalPage; i++) {
         PaginationRow.push(
             <li

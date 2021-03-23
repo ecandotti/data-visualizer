@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { BiSearch } from 'react-icons/bi'
 
 const Search = ({ setName, name }) => {
+    // Search bar child component, work with fuseJS (parent component)
     return (
         <>
             <small style={{ color: 'gray' }}>
