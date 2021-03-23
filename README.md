@@ -1,5 +1,6 @@
 # 📊 Data Visualizer  
 ## Project in ReactJS for Front End cours (Ynov)
+### Size of project (builded) : 1,2MB
 
 Library used | Utility
 ------------ | -------------
@@ -21,6 +22,11 @@ git clone https://github.com/ecandotti/data-visualizer
 cd /data-visualizer
 npm i
 npm start
+```  
+
+Build the project :  
+```
+npm run build
 ```
   
 We can : 
@@ -42,4 +48,10 @@ To Do :
 - [X] Download data edited  
 - [X] Comment all project  
 - [X] Custom filter  
-- [] Test unitaire  
+- [ ] Test unitaire  
+
+### Lighthouse Desktop
+<img src="https://user-images.githubusercontent.com/66432682/112182604-b84d6a00-8bfd-11eb-87aa-d2a66ef6ce1d.png" />  
+
+### Lighthouse Mobile
+<img src="https://user-images.githubusercontent.com/66432682/112182608-b97e9700-8bfd-11eb-8cb5-b6950b46bfbc.png" />  
