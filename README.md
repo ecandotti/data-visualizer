@@ -9,7 +9,16 @@ Library used :
 - FuseJS
 - ChartJS  
 - Snowpack  
-- Babel / ESLint / Prettier
+- Babel / ESLint / Prettier  
+  
+We can : 
+- Read data in array 📁  
+- Search specific details thanks to search bar 🔍  
+- See graphs that adapt according to the data received 📊  
+- Edit data 📝  
+- Reset all data ❌  
+- Filter the data (by gender or/and favorite fruit) 👨‍🎨🍇  
+- Download the data (edited) ⬇︎  
   
 To Do :  
 [X] Creating project  
