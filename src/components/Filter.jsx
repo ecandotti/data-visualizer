@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useData } from '../context/dataContext'
 
 const Filter = () => {
-    const { initialData, setPeople } = useData()
+    const { initialData, setPeople, people } = useData()
 
     const [genderValue, setGenderValue] = useState('')
 
@@ -27,12 +27,21 @@ const Filter = () => {
         if (fruitValue === '') {
             setPeople(initialData)
         } else {
-            setGenderValue('')
-            setPeople(
-                initialData.filter(
-                    (word) => word.preferences.favorite_fruit === fruitValue
+            if (people && genderValue) {
+                setPeople(
+                    initialData.filter(
+                        (word) =>
+                            word.gender === genderValue &&
+                            word.preferences.favorite_fruit === fruitValue
+                    )
                 )
-            )
+            } else {
+                setPeople(
+                    initialData.filter(
+                        (word) => word.preferences.favorite_fruit === fruitValue
+                    )
+                )
+            }
         }
     }, [fruitValue])
 
@@ -40,8 +49,19 @@ const Filter = () => {
         if (genderValue === '') {
             setPeople(initialData)
         } else {
-            setFruitValue('')
-            setPeople(initialData.filter((word) => word.gender === genderValue))
+            if (people && fruitValue) {
+                setPeople(
+                    initialData.filter(
+                        (word) =>
+                            word.gender === genderValue &&
+                            word.preferences.favorite_fruit === fruitValue
+                    )
+                )
+            } else {
+                setPeople(
+                    initialData.filter((word) => word.gender === genderValue)
+                )
+            }
         }
     }, [genderValue])
 
