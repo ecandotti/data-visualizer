@@ -1,42 +1,64 @@
 {
-  "name": "data_vizualiser",
-  "version": "1.0.0",
-  "description": "Web app that can show data",
-  "main": "./src/index.js",
-  "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ecandotti/data-visualizer.git"
-  },
-  "author": "Enzo Candotti <enzo.candotti16@hotmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ecandotti/data-visualizer/issues"
-  },
-  "homepage": "https://github.com/ecandotti/data-visualizer#readme",
-  "dependencies": {
-    "chart.js": "^2.9.4",
-    "fuse.js": "^6.4.6",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-icons": "^4.1.0",
-    "react-router-dom": "^5.2.0"
-  },
-  "devDependencies": {
-    "@babel/plugin-syntax-import-meta": "^7.10.4",
-    "@babel/preset-react": "^7.12.10",
-    "@snowpack/plugin-babel": "^2.1.6",
-    "@snowpack/plugin-react-refresh": "^2.4.0",
-    "eslint": "^7.18.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "prettier": "^2.2.1",
-    "prop-types": "^15.7.2",
-    "snowpack": "^2.18.5"
-  }
+    "name": "data_vizualiser",
+    "version": "1.0.0",
+    "description": "Web app that can show data",
+    "main": "./src/index.js",
+    "scripts": {
+        "start": "snowpack dev",
+        "build": "snowpack build",
+        "test": "jest --watchAll"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ecandotti/data-visualizer.git"
+    },
+    "author": "Enzo Candotti <enzo.candotti16@hotmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ecandotti/data-visualizer/issues"
+    },
+    "homepage": "https://github.com/ecandotti/data-visualizer#readme",
+    "dependencies": {
+        "chart.js": "^2.9.4",
+        "fuse.js": "^6.4.6",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-icons": "^4.1.0",
+        "react-router-dom": "^5.2.0"
+    },
+    "devDependencies": {
+        "@babel/plugin-syntax-import-meta": "^7.10.4",
+        "@babel/preset-react": "^7.12.10",
+        "@snowpack/plugin-babel": "^2.1.6",
+        "@snowpack/plugin-react-refresh": "^2.4.0",
+        "eslint": "^7.18.0",
+        "eslint-config-prettier": "^7.2.0",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-react": "^7.22.0",
+        "jest": "^26.6.3",
+        "prettier": "^2.2.1",
+        "prop-types": "^15.7.2",
+        "snowpack": "^2.18.5"
+    },
+    "babel": {
+        "presets": ["@babel/preset-react"]
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es2021": true
+        },
+        "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+        "parserOptions": {
+            "ecmaFeatures": {
+                "jsx": true
+            },
+            "ecmaVersion": 12,
+            "sourceType": "module"
+        },
+        "plugins": ["react", "prettier"],
+        "rules": { 
+            "prettier/prettier": "error" 
+        }
+    }
 }
