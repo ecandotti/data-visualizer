@@ -27,11 +27,10 @@ const AnimalLovers = ({ people }) => {
                 labels: data[0],
                 datasets: [
                     {
-                        label: 'Men / Women',
+                        label: 'Gender',
                         data: data[1],
                         backgroundColor: ['Red', 'Pink', 'Blue', 'Orange'],
-                        borderColor: ['Red', 'Pink', 'Blue', 'Orange'],
-                        borderWidth: 1,
+                        border: 1,
                         hoverBackgroundColor: ['Red', 'Pink', 'Blue', 'Orange'],
                     },
                 ],
