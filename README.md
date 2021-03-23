@@ -10,6 +10,11 @@ Library used :
 - ChartJS  
 - Snowpack  
 - Babel / ESLint / Prettier  
+
+Launch the code  :
+~script
+git clone
+~script
   
 We can : 
 - Read data in array 📁  
