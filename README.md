@@ -21,6 +21,11 @@ git clone https://github.com/ecandotti/data-visualizer
 cd /data-visualizer
 npm i
 npm start
+```  
+
+Build the project :  
+```
+npm run build
 ```
   
 We can : 
