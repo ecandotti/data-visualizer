@@ -1,5 +1,6 @@
 # 📊 Data Visualizer  
 ## Project in ReactJS for Front End cours (Ynov)
+### Size of project (builded) : 1,2MB
 
 Library used | Utility
 ------------ | -------------
